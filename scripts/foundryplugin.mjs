@@ -10,9 +10,8 @@ const MODULE_ID = "foundryplugin";
  */
 class FoundryPluginRecorder {
   static initialize() {
-    if (!game.user?.isGM) return;
-
     Hooks.on("ready", async () => {
+      if (!game.user?.isGM) return;
       await this.prepareOutputDirectory();
       for (const actor of game.actors.contents) {
         await this.recordActorHP(actor);
