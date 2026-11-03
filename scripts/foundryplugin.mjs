@@ -47,7 +47,7 @@ class FoundryPluginRecorder {
     const fileName = `${this.safeFileName(targetName)}_Wurf.txt`;
 
     try {
-      await this.appendToFile(fileName, `${rollResults}\n`);
+      await this.writeFile(fileName, `${rollResults}\n`);
     } catch (error) {
       console.error(`[${MODULE_ID}] Could not record roll`, error);
     }
