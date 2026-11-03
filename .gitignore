@@ -1,0 +1,11 @@
+# Betriebssystem- und Editor-Dateien
+.DS_Store
+*.swp
+.vscode/
+
+# Abhängigkeiten und Build-Ausgaben
+node_modules/
+dist/
+
+# Lokale Foundry-Daten
+Data/

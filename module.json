@@ -1,0 +1,22 @@
+{
+  "id": "foundryplugin",
+  "title": "FoundryPlugin",
+  "description": "Ein Foundry Virtual Tabletop Modul als Ausgangspunkt für eigene Erweiterungen.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Raine"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12"
+  },
+  "esmodules": [
+    "scripts/foundryplugin.mjs"
+  ],
+  "styles": [
+    "styles/foundryplugin.css"
+  ],
+  "license": "LICENSE",
+  "readme": "README.md"
+}
