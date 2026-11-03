@@ -31,7 +31,7 @@ Beispiel für ein System mit `actor.system.health.current` und
 
 Dateien:
 
-- `<Charakter>_HP.txt` – aktuelle und maximale HP
+- `<Charakter>_HP.txt` – aktueller und maximaler Wert als `Aktuell/Maximum`, zum Beispiel `24/25`
 - `<Charakter>_Wurf.txt` – ausschließlich das jeweils letzte Würfelergebnis
 
 Nicht zuordenbare Würfe werden in `<Spieler>_Wurf.txt` gespeichert.

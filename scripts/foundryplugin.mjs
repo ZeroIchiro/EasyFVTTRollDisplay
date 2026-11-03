@@ -86,13 +86,7 @@ class FoundryPluginRecorder {
     const hp = this.getHP(actor);
     if (!hp) return;
 
-    const content = [
-      `Charakter: ${actor.name}`,
-      `Aktuelle HP: ${hp.value}`,
-      `Maximale HP: ${hp.max}`,
-      `Aktualisiert: ${new Date().toISOString()}`,
-      ""
-    ].join("\n");
+    const content = `${hp.value}/${hp.max}\n`;
 
     try {
       await this.writeFile(`${this.safeFileName(actor.name)}_HP.txt`, content);
