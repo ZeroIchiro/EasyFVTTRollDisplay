@@ -71,14 +71,14 @@ The following files are created:
 
 ```text
 <CharacterName>_HP.txt
-<CharacterName>_Wurf.txt
+<CharacterName>_Roll.txt
 ```
 
 For example:
 
 ```text
 Nyx_Finsterwald_HP.txt
-Nyx_Finsterwald_Wurf.txt
+Nyx_Finsterwald_Roll.txt
 ```
 
 ### HP file
@@ -107,7 +107,7 @@ A new roll replaces the previous value. If a chat message contains multiple roll
 Rolls that cannot be associated with an actor are written to:
 
 ```text
-<PlayerName>_Wurf.txt
+<PlayerName>_Roll.txt
 ```
 
 ## Accessing files by URL
@@ -124,7 +124,7 @@ then the files can be accessed at:
 
 ```text
 https://example.com/obsdicerolldisplay-output/Nyx_Finsterwald_HP.txt
-https://example.com/obsdicerolldisplay-output/Nyx_Finsterwald_Wurf.txt
+https://example.com/obsdicerolldisplay-output/Nyx_Finsterwald_Roll.txt
 ```
 
 For a local Foundry installation using the default port:

@@ -71,7 +71,7 @@ class FoundryPluginRecorder {
     if (!rollResults) return;
 
     const targetName = actor?.name ?? user?.name ?? "unbekannt";
-    const fileName = `${this.safeFileName(targetName)}_Wurf.txt`;
+    const fileName = `${this.safeFileName(targetName)}_Roll.txt`;
 
     try {
       await this.writeFile(fileName, `${rollResults}\n`);
