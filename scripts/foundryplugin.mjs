@@ -40,26 +40,14 @@ class FoundryPluginRecorder {
     const speaker = message.speaker ?? {};
     const actor = speaker.actor ? game.actors.get(speaker.actor) : null;
     const user = message.user ?? game.users.get(message.user?.id);
-    const rollText = this.formatRoll(message);
-    const timestamp = new Date().toISOString();
-
-    const entry = [
-      `[${timestamp}]`,
-      `Spieler: ${user?.name ?? "Unbekannt"}`,
-      `Charakter: ${actor?.name ?? "Nicht zugeordnet"}`,
-      `Wurf: ${rollText}`,
-      ""
-    ].join("\n");
+    const rollResults = this.formatRollResults(message);
+    if (!rollResults) return;
 
     const targetName = actor?.name ?? user?.name ?? "unbekannt";
     const fileName = `${this.safeFileName(targetName)}_Wurf.txt`;
 
     try {
-      if (actor) {
-        await this.appendToFile(fileName, entry);
-      } else {
-        await this.appendToFile(`${this.safeFileName(user?.name ?? "unbekannt")}_Wurf.txt`, entry);
-      }
+      await this.appendToFile(fileName, `${rollResults}\n`);
     } catch (error) {
       console.error(`[${MODULE_ID}] Could not record roll`, error);
     }
@@ -93,13 +81,12 @@ class FoundryPluginRecorder {
     return { value: hp.value, max: hp.max };
   }
 
-  static formatRoll(message) {
+  static formatRollResults(message) {
     const rolls = message.rolls ?? (message.roll ? [message.roll] : []);
-    return rolls.map((roll) => {
-      const formula = roll.formula ?? "unbekannte Formel";
-      const total = roll.total ?? "kein Ergebnis";
-      return `${formula} = ${total}`;
-    }).join("; ");
+    return rolls
+      .map((roll) => roll.total)
+      .filter((total) => total !== undefined && total !== null)
+      .join("\n");
   }
 
   static safeFileName(value) {

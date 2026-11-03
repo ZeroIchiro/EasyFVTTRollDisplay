@@ -17,7 +17,7 @@ unter `Data/` als direkt auslieferbare Webressourcen. Der Ausgabeordner sollte
 daher keine vertraulichen Daten enthalten.
 
 - `<Charakter>_HP.txt` – aktuelle und maximale HP
-- `<Charakter>_Wurf.txt` – erfasste Würfe
+- `<Charakter>_Wurf.txt` – je Würfelergebnis eine einzelne Zahl pro Zeile
 
 Nicht zuordenbare Würfe werden in `<Spieler>_Wurf.txt` gespeichert.
 
