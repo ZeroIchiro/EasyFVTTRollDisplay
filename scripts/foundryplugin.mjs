@@ -83,10 +83,10 @@ class FoundryPluginRecorder {
 
   static formatRollResults(message) {
     const rolls = message.rolls ?? (message.roll ? [message.roll] : []);
-    return rolls
+    const totals = rolls
       .map((roll) => roll.total)
-      .filter((total) => total !== undefined && total !== null)
-      .join("\n");
+      .filter((total) => total !== undefined && total !== null);
+    return totals.length ? String(totals[totals.length - 1]) : "";
   }
 
   static safeFileName(value) {
