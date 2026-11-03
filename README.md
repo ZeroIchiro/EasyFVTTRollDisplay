@@ -1,4 +1,4 @@
-# FoundryPlugin
+# Easy Dice Result Display for OBS
 
 Modul für Foundry Virtual Tabletop zur Erfassung von Würfelergebnissen und Charakter-HP während einer laufenden Session.
 

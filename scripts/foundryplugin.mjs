@@ -1,5 +1,5 @@
 const OUTPUT_DIRECTORY = "foundryplugin-output";
-const MODULE_ID = "foundryplugin";
+const MODULE_ID = "obsdicerolldisplay";
 
 // Files in the Foundry Data directory are served directly by Foundry's built-in
 // web server. The public URL is: /foundryplugin-output/<filename>
