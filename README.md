@@ -5,12 +5,12 @@ Modul für Foundry Virtual Tabletop zur Erfassung von Würfelergebnissen und Cha
 Der integrierte Foundry-Webserver stellt den Ausgabeordner direkt bereit. Bei
 `https://deine-foundry-domain.tld` sind die Dateien abrufbar unter:
 
-- `https://deine-foundry-domain.tld/foundryplugin-output/<Charakter>_HP.txt`
-- `https://deine-foundry-domain.tld/foundryplugin-output/<Charakter>_Wurf.txt`
+- `https://deine-foundry-domain.tld/obsdicerolldisplay-output/<Charakter>_HP.txt`
+- `https://deine-foundry-domain.tld/obsdicerolldisplay-output/<Charakter>_Wurf.txt`
 
 Bei lokalem Betrieb mit dem Standardport lautet die URL beispielsweise:
 
-`http://localhost:30000/foundryplugin-output/CharakterA_HP.txt`
+`http://localhost:30000/obsdicerolldisplay-output/CharakterA_HP.txt`
 
 Die URLs sind absichtlich nicht zusätzlich geschützt. Foundry behandelt Inhalte
 unter `Data/` als direkt auslieferbare Webressourcen. Der Ausgabeordner sollte
