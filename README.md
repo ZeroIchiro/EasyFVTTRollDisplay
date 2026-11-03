@@ -21,7 +21,7 @@ A Foundry Virtual Tabletop module that writes the latest dice result and the cur
 4. Paste this manifest URL into the **Manifest URL** field:
 
    ```text
-   https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/tags/v0.1.13/module.json
+   https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/heads/main/module.json
    ```
 
 5. Click **Install**.
@@ -31,6 +31,23 @@ A Foundry Virtual Tabletop module that writes the latest dice result and the cur
 9. Start or reload the world as a GM.
 
 The module ID is `obsdicerolldisplay`.
+
+## Updates
+
+The module uses this stable manifest URL for Foundry's update checks:
+
+```text
+https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/heads/main/module.json
+```
+
+Each release increases the version in `module.json` and provides a release ZIP
+through the `download` field. After a one-time installation from the stable
+manifest URL, Foundry can detect and install later releases through **Update
+All**.
+
+Existing installations that were installed from a version-specific tag URL must
+be reinstalled once from the stable manifest URL above. Version-specific tag
+manifests cannot discover later releases.
 
 ## Manual installation
 
