@@ -10,6 +10,33 @@ const MODULE_ID = "foundryplugin";
  */
 class FoundryPluginRecorder {
   static initialize() {
+    game.settings.register(MODULE_ID, "hpValuePath", {
+      name: "HP-Wert-Pfad",
+      hint: "Pfad relativ zu actor.system, zum Beispiel attributes.hp.value",
+      scope: "world",
+      config: true,
+      type: String,
+      default: "attributes.hp.value"
+    });
+
+    game.settings.register(MODULE_ID, "hpMaxPath", {
+      name: "HP-Maximum-Pfad",
+      hint: "Pfad relativ zu actor.system, zum Beispiel attributes.hp.max",
+      scope: "world",
+      config: true,
+      type: String,
+      default: "attributes.hp.max"
+    });
+
+    game.settings.register(MODULE_ID, "hpAutoDetect", {
+      name: "HP-Pfade automatisch erkennen",
+      hint: "Verwendet gängige HP-Strukturen, wenn die konfigurierten Pfade nicht gefunden werden.",
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    });
+
     Hooks.on("ready", async () => {
       if (!game.user?.isGM) return;
       await this.prepareOutputDirectory();
@@ -75,10 +102,28 @@ class FoundryPluginRecorder {
   }
 
   static getHP(actor) {
-    const hp = foundry.utils.getProperty(actor.system, "attributes.hp")
-      ?? foundry.utils.getProperty(actor.system, "hp");
-    if (!hp || hp.value === undefined || hp.max === undefined) return null;
-    return { value: hp.value, max: hp.max };
+    const configuredValuePath = game.settings.get(MODULE_ID, "hpValuePath");
+    const configuredMaxPath = game.settings.get(MODULE_ID, "hpMaxPath");
+    const candidates = [[configuredValuePath, configuredMaxPath]];
+
+    if (game.settings.get(MODULE_ID, "hpAutoDetect")) {
+      candidates.push(
+        ["attributes.hp.value", "attributes.hp.max"],
+        ["hp.value", "hp.max"],
+        ["attributes.health.value", "attributes.health.max"],
+        ["health.value", "health.max"]
+      );
+    }
+
+    for (const [valuePath, maxPath] of candidates) {
+      const value = foundry.utils.getProperty(actor.system, valuePath);
+      const max = foundry.utils.getProperty(actor.system, maxPath);
+      if (value !== undefined && value !== null && max !== undefined && max !== null) {
+        return { value, max };
+      }
+    }
+
+    return null;
   }
 
   static formatRollResults(message) {

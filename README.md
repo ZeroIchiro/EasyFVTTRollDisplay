@@ -16,6 +16,21 @@ Die URLs sind absichtlich nicht zusätzlich geschützt. Foundry behandelt Inhalt
 unter `Data/` als direkt auslieferbare Webressourcen. Der Ausgabeordner sollte
 daher keine vertraulichen Daten enthalten.
 
+Die HP-Pfade können in Foundry unter `Configure Settings → Module Settings`
+angepasst werden:
+
+- `HP-Wert-Pfad`: relativ zu `actor.system`, Standard `attributes.hp.value`
+- `HP-Maximum-Pfad`: relativ zu `actor.system`, Standard `attributes.hp.max`
+- `HP-Pfade automatisch erkennen`: versucht zusätzlich gängige Strukturen
+
+Beispiel für ein System mit `actor.system.health.current` und
+`actor.system.health.max`:
+
+- HP-Wert-Pfad: `health.current`
+- HP-Maximum-Pfad: `health.max`
+
+Dateien:
+
 - `<Charakter>_HP.txt` – aktuelle und maximale HP
 - `<Charakter>_Wurf.txt` – ausschließlich das jeweils letzte Würfelergebnis
 
