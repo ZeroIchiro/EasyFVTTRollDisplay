@@ -77,8 +77,8 @@ The following files are created:
 For example:
 
 ```text
-Nyx_Finsterwald_HP.txt
-Nyx_Finsterwald_Roll.txt
+Brian_Hero_HP.txt
+Brian_Hero_Roll.txt
 ```
 
 ### HP file
@@ -123,14 +123,14 @@ https://example.com
 then the files can be accessed at:
 
 ```text
-https://example.com/obsdicerolldisplay-output/Nyx_Finsterwald_HP.txt
-https://example.com/obsdicerolldisplay-output/Nyx_Finsterwald_Roll.txt
+https://example.com/obsdicerolldisplay-output/Brian_Hero_HP.txt
+https://example.com/obsdicerolldisplay-output/Brian_Hero_Roll.txt
 ```
 
 For a local Foundry installation using the default port:
 
 ```text
-http://localhost:30000/obsdicerolldisplay-output/Nyx_Finsterwald_HP.txt
+http://localhost:30000/obsdicerolldisplay-output/Brian_Hero_HP.txt
 ```
 
 Use the actual hostname, domain, port, and base path of your Foundry installation.
