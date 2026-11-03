@@ -12,7 +12,7 @@
     "minimum": "12"
   },
   "url": "https://github.com/ZeroIchiro/EasyFVTTRollDisplay",
-  "manifest": "https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/main/module.json",
+  "manifest": "https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/heads/main/module.json",
   "download": "https://github.com/ZeroIchiro/EasyFVTTRollDisplay/archive/refs/heads/main.zip",
   "esmodules": [
     "scripts/foundryplugin.mjs"
