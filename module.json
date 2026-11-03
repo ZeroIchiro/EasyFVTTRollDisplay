@@ -2,7 +2,7 @@
   "id": "foundryplugin",
   "title": "FoundryPlugin",
   "description": "Ein Foundry Virtual Tabletop Modul als Ausgangspunkt für eigene Erweiterungen.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "authors": [
     {
       "name": "Raine"
@@ -12,8 +12,8 @@
     "minimum": "12"
   },
   "url": "https://github.com/ZeroIchiro/EasyFVTTRollDisplay",
-  "manifest": "https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/heads/main/module.json",
-  "download": "https://github.com/ZeroIchiro/EasyFVTTRollDisplay/archive/refs/heads/main.zip",
+  "manifest": "https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/tags/v0.1.2/module.json",
+  "download": "https://github.com/ZeroIchiro/EasyFVTTRollDisplay/archive/refs/tags/v0.1.2.zip",
   "esmodules": [
     "scripts/foundryplugin.mjs"
   ],
