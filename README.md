@@ -21,7 +21,7 @@ A Foundry Virtual Tabletop module that writes the latest dice result and the cur
 4. Paste this manifest URL into the **Manifest URL** field:
 
    ```text
-   https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/tags/v0.1.11/module.json
+   https://raw.githubusercontent.com/ZeroIchiro/EasyFVTTRollDisplay/refs/tags/v0.1.13/module.json
    ```
 
 5. Click **Install**.
